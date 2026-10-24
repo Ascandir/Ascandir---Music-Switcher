@@ -2,7 +2,7 @@
   "id": "ascandir-music-switcher",
   "title": "Ascandir - Music Switcher",
   "description": "Spielt automatisch passende Musik je nach Szene und Kampf. Wechselt beim Szenenwechsel oder Kampfbeginn/-ende das Lied mit sauberem Aus- und Einblenden. Einstellbar nur vom Spielleiter.",
-  "version": "1.0.1",
+  "version": "0.1.0",
   "authors": [
     {
       "name": "Ascandir"
@@ -32,6 +32,6 @@
   ],
   "url": "https://github.com/Ascandir/Ascandir---Music-Switcher",
   "manifest": "https://github.com/Ascandir/Ascandir---Music-Switcher/releases/latest/download/module.json",
-  "download": "https://github.com/Ascandir/Ascandir---Music-Switcher/releases/download/v1.0.1/module.zip",
+  "download": "https://github.com/Ascandir/Ascandir---Music-Switcher/releases/download/v0.1.0/module.zip",
   "bugs": "https://github.com/Ascandir/Ascandir---Music-Switcher/issues"
 }
