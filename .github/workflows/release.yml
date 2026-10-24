@@ -1,0 +1,52 @@
+name: Release
+
+# Baut automatisch ein neues Release, sobald in module.json eine neue Version steht.
+on:
+  push:
+    branches: [main]
+    paths: [module.json]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version lesen
+        id: v
+        run: echo "version=$(jq -r .version module.json)" >> "$GITHUB_OUTPUT"
+
+      - name: Gibt es das Release schon?
+        id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "v${{ steps.v.outputs.version }}" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Manifest anpassen und Zip bauen
+        if: steps.check.outputs.exists == 'false'
+        run: |
+          V="${{ steps.v.outputs.version }}"
+          REPO="${{ github.repository }}"
+          jq --arg m "https://github.com/$REPO/releases/latest/download/module.json" \
+             --arg d "https://github.com/$REPO/releases/download/v$V/module.zip" \
+             '.manifest = $m | .download = $d' module.json > module.tmp && mv module.tmp module.json
+          zip -r module.zip module.json scripts lang styles README.md
+
+      - name: Release erstellen
+        if: steps.check.outputs.exists == 'false'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          V="${{ steps.v.outputs.version }}"
+          gh release create "v$V" module.json module.zip \
+            --title "Ascandir - Music Switcher v$V" \
+            --notes "Automatisches Release für Version $V."

@@ -1,0 +1,54 @@
+{
+  "ascandir-music-switcher": {
+    "settings": {
+      "enabled": {
+        "name": "Switch music automatically",
+        "hint": "When enabled, music changes automatically when the active scene changes and when combat starts or ends."
+      },
+      "defaultExplore": {
+        "name": "Default music (no combat)",
+        "hint": "Plays on every scene that has no exploration music of its own."
+      },
+      "defaultCombat": {
+        "name": "Default combat music",
+        "hint": "Plays during combat on every scene that has no combat music of its own."
+      },
+      "fadeDuration": {
+        "name": "Transition duration (seconds)",
+        "hint": "How long the old track fades out and the new one fades in. 0 = hard cut."
+      },
+      "transition": {
+        "name": "Transition type",
+        "hint": "Sequential: fade out completely, then fade in the new track. Crossfade: both at the same time.",
+        "sequential": "Sequential (out, then in)",
+        "crossfade": "Crossfade (simultaneous)"
+      },
+      "fadeScope": {
+        "name": "Which music is faded out on a switch?",
+        "hint": "With the first option, ambience playlists stay untouched if their channel is set to \"Environment\".",
+        "music": "All playlists on the \"Music\" channel",
+        "managed": "Only those started by Music Switcher",
+        "all": "All playlists"
+      }
+    },
+    "options": {
+      "useDefault": "— Default from module settings —",
+      "keep": "— Change nothing (music keeps playing) —",
+      "stop": "— Fade out music (silence) —",
+      "wholePlaylist": "Whole playlist",
+      "missing": "⚠ Deleted playlist / track"
+    },
+    "scene": {
+      "legend": "Music Switcher",
+      "hint": "Music for this scene. Plays when the scene is activated and when combat on it starts or ends.",
+      "explore": "Music outside combat",
+      "combat": "Music in combat"
+    },
+    "notify": {
+      "missing": "Music Switcher: The configured playlist or track no longer exists.",
+      "empty": "Music Switcher: The configured playlist has no tracks.",
+      "enabled": "Music Switcher: Automation enabled.",
+      "disabled": "Music Switcher: Automation disabled."
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "ascandir-music-switcher": {
+    "settings": {
+      "enabled": {
+        "name": "Musik automatisch wechseln",
+        "hint": "Wenn aktiv, wechselt die Musik automatisch beim Szenenwechsel sowie bei Kampfbeginn und Kampfende."
+      },
+      "defaultExplore": {
+        "name": "Standard-Musik (kein Kampf)",
+        "hint": "Läuft auf allen Szenen, für die keine eigene Erkundungsmusik eingestellt ist."
+      },
+      "defaultCombat": {
+        "name": "Standard-Kampfmusik",
+        "hint": "Läuft bei jedem Kampf auf Szenen, für die keine eigene Kampfmusik eingestellt ist."
+      },
+      "fadeDuration": {
+        "name": "Dauer des Übergangs (Sekunden)",
+        "hint": "Wie lange das alte Lied leiser und das neue Lied lauter wird. 0 = harter Schnitt."
+      },
+      "transition": {
+        "name": "Art des Übergangs",
+        "hint": "Nacheinander: erst ganz ausblenden, dann das neue Lied einblenden. Überblenden: beides gleichzeitig.",
+        "sequential": "Nacheinander (aus, dann ein)",
+        "crossfade": "Überblenden (gleichzeitig)"
+      },
+      "fadeScope": {
+        "name": "Welche Musik wird beim Wechsel ausgeblendet?",
+        "hint": "Ambience-/Umgebungs-Playlists bleiben bei der ersten Option unberührt, wenn ihr Kanal in der Playlist auf \"Umgebung\" steht.",
+        "music": "Alle Playlists im Kanal \"Musik\"",
+        "managed": "Nur vom Music Switcher gestartete",
+        "all": "Alle Playlists"
+      }
+    },
+    "options": {
+      "useDefault": "— Standard aus den Moduleinstellungen —",
+      "keep": "— Nichts ändern (Musik läuft weiter) —",
+      "stop": "— Musik ausblenden (Stille) —",
+      "wholePlaylist": "Ganze Playlist",
+      "missing": "⚠ Gelöschte Playlist / Track"
+    },
+    "scene": {
+      "legend": "Music Switcher",
+      "hint": "Musik für diese Szene. Wird gespielt, sobald die Szene aktiviert wird bzw. ein Kampf auf ihr beginnt oder endet.",
+      "explore": "Musik ohne Kampf",
+      "combat": "Musik im Kampf"
+    },
+    "notify": {
+      "missing": "Music Switcher: Die eingestellte Playlist bzw. der Track existiert nicht mehr.",
+      "empty": "Music Switcher: Die eingestellte Playlist enthält keine Tracks.",
+      "enabled": "Music Switcher: Automatik eingeschaltet.",
+      "disabled": "Music Switcher: Automatik ausgeschaltet."
+    }
+  }
+}

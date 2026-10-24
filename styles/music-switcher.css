@@ -1,0 +1,9 @@
+fieldset.ascandir-music-switcher-fieldset {
+  margin-top: 0.75rem;
+}
+fieldset.ascandir-music-switcher-fieldset legend i {
+  margin-right: 0.25rem;
+}
+fieldset.ascandir-music-switcher-fieldset select {
+  width: 100%;
+}
